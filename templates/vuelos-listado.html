@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+
+{% block title %}
+Listado - vuelos
+{% endblock %}
+
+{% block content %}
+<style>
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        background-color: #090b2d;
+        border-radius: 3px;
+        color: #fff;
+        width: 800px;
+        margin: 0 auto;
+        font-size: 18px;
+    }
+
+    .logo {
+        width: 150px;
+        position: relative;
+        left: 45%;
+        top: 50px;
+    }
+
+    .cerrar-sesion {
+        color: #fff;
+        text-align: center;
+        height: 28px;
+        position: absolute;
+        width: 151px;
+        top: 10px;
+        right: 12px;
+    }
+
+    h1 {
+        top: 150px;
+        font-size: 30px;
+        left: 38%;
+        position: absolute;
+    }
+
+    .tabla {
+        position: relative;
+        top: 150px;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th,
+    td {
+        padding: 12px;
+    }
+
+    th {
+        font-weight: bolder;
+        text-align: left;
+        border-bottom: solid 1px #fff;
+    }
+
+    td {
+        border-bottom: solid 1px #fff;
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: rgb(140, 200, 220);
+    }
+
+    tbody tr:hover {
+        background-color: #ffc107;
+    }
+
+    .volver {
+        position: absolute;
+        top: 750px;
+        color: white;
+    }
+
+    .info {
+        font-size: 15px;
+        left: 45px;
+        position: absolute;
+        top: 15px;
+    }
+
+    .ver-comentarios {
+        top: 750px;
+        position: absolute;
+        left: 580px;
+        color: #fff;
+    }
+</style>
+<img class="logo" src="../static/img/group-2@2x.svg">
+<div class="info">
+    Bienvenido, {% if session.usuario %} {{ session.usuario }} {% endif %}
+    <div>Nombre del Usuario: {% if session.nombre %} {{ session.nombre }} {% endif %}</div>
+    <div>ID del usuario: {% if session.iden %} {{ session.iden }} {% endif %}</div>
+    <div>Rol: {% if session.perfil == 1 %} Piloto {% elif session.perfil == 3 %} Administrador {% elif session.perfil ==
+        2 %} Usuario {% endif %}</div>
+</div>
+
+<div>
+    <a class="cerrar-sesion" href="/logout">Logout</a>
+</div>
+<h1>Listado de tus vuelos asignados</h1>
+<table class="tabla">
+    <thead>
+        <td>Código</td>
+        <td>Avión</td>
+        <td>Piloto</td>
+        <td>Capacidad</td>
+        <td>Estado</td>
+        <td>Origen</td>
+        <td>Destino</td>
+        <td>ID piloto asignado</td>
+    </thead>
+
+    {% for r in rows %}
+    <tr>
+        <td>{{ r["codigo"] }}</td>
+        <td>{{ r["avion"] }}</td>
+        <td>{{ r["piloto"] }}</td>
+        <td>{{ r["capacidad"] }}</td>
+        <td>{{ r["estado"] }}</td>
+        <td>{{ r["origen"] }}</td>
+        <td>{{ r["destino"] }}</td>
+        <td>{{ r["id_piloto_fk"] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<br><br>
+<a class="volver" href="/administrador/dashboard">Volver</a>
+<a href="/ver-comentarios" class="ver-comentarios">Ver comentarios</a>
+
+</div>
+{% endblock %}

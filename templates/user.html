@@ -1,0 +1,286 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Consultar vuelos
+{% endblock %}
+
+{% block content %}
+<style>
+  * {
+    color: #fff;
+    background-color: #090b2d;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  #formulario {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80%;
+  }
+
+  #codigo {
+    width: 258px;
+    height: 31px;
+    left: 551px;
+    top: 53px;
+
+    background: rgba(191, 191, 191, 0.15);
+    border: 2px solid #9B9B9B;
+    box-sizing: border-box;
+    border-radius: 20px;
+  }
+
+  #avion {
+    width: 258px;
+    height: 31px;
+    left: 551px;
+    top: 123px;
+
+    background: rgba(191, 191, 191, 0.15);
+    border: 2px solid #9B9B9B;
+    box-sizing: border-box;
+    border-radius: 20px;
+  }
+
+  #piloto {
+    width: 258px;
+    height: 31px;
+    left: 551px;
+    top: 143px;
+
+    background: rgba(191, 191, 191, 0.15);
+    border: 2px solid #9B9B9B;
+    box-sizing: border-box;
+    border-radius: 20px;
+  }
+
+  #capacidad {
+    width: 258px;
+    height: 31px;
+    left: 551px;
+    top: 163px;
+
+    background: rgba(191, 191, 191, 0.15);
+    border: 2px solid #9B9B9B;
+    box-sizing: border-box;
+    border-radius: 20px;
+  }
+
+  #estado {
+    width: 258px;
+    height: 31px;
+    left: 551px;
+    top: 183px;
+
+    background: rgba(191, 191, 191, 0.15);
+    border: 2px solid #9B9B9B;
+    box-sizing: border-box;
+    border-radius: 20px;
+  }
+
+  #origen {
+    width: 258px;
+    height: 31px;
+    left: 551px;
+    top: 53px;
+
+    background: rgba(191, 191, 191, 0.15);
+    border: 2px solid #9B9B9B;
+    box-sizing: border-box;
+    border-radius: 20px;
+  }
+
+  #destino {
+    width: 258px;
+    height: 31px;
+    left: 551px;
+    top: 53px;
+
+    background: rgba(191, 191, 191, 0.15);
+    border: 2px solid #9B9B9B;
+    box-sizing: border-box;
+    border-radius: 20px;
+  }
+
+  #id_piloto_fk {
+    width: 258px;
+    height: 31px;
+    left: 551px;
+    top: 53px;
+
+    background: rgba(191, 191, 191, 0.15);
+    border: 2px solid #9B9B9B;
+    box-sizing: border-box;
+    border-radius: 20px;
+  }
+
+  #nombre {
+    width: 258px;
+    height: 31px;
+    left: 551px;
+    top: 53px;
+
+    background: rgba(191, 191, 191, 0.15);
+    border: 2px solid #9B9B9B;
+    box-sizing: border-box;
+    border-radius: 20px;
+  }
+
+  #consultar {
+    top: 20px;
+    color: #fff;
+    text-align: center;
+    border-radius: 20px;
+    height: 28px;
+    position: relative;
+    width: 151px;
+  }
+
+  #reservar {
+    top: 20px;
+    color: #fff;
+    text-align: center;
+    border-radius: 20px;
+    height: 28px;
+    position: relative;
+    width: 151px;
+  }
+
+  .crear-comentario {
+    left: 40px;
+    position: absolute;
+    top: 60px;
+  }
+
+  .cerrar-sesion {
+    color: #fff;
+    text-align: center;
+    height: 28px;
+    position: absolute;
+    width: 151px;
+    top: 5px;
+    right: 120px;
+  }
+
+  .info {
+    left: 45px;
+    position: absolute;
+    top: 15px;
+  }
+</style>
+<img class="logo" src="../static/img/group-2@2x.svg">
+<div class="info">
+  Bienvenido, {% if session.usuario %} {{ session.usuario }} {% endif %}
+</div>
+<a href="/comentarios" class="crear-comentario">Crear comentarios</a>
+
+<div>
+  <a class="cerrar-sesion" href="/logout">Logout</a>
+</div>
+<div class="centrado">
+  <form id="formulario2" action="/usuario/dashboard" method="post" onsubmit="return confirmarBorrado()">
+    {{ frm2.hidden_tag() }}
+    <p>
+      {{ frm2.codigo.label }}
+      {{ frm2.codigo }}
+      {% for error in frm2.codigo.errors %}
+    <div>
+      {{ error }}
+    </div>
+    {% endfor %}
+    </p>
+    <p>
+      {{ frm2.avion.label }}
+      {{ frm2.avion }}
+      {% for error in frm2.avion.errors %}
+    <div>
+      {{ error }}
+    </div>
+    {% endfor %}
+    </p>
+    <p>
+      {{ frm2.piloto.label }}
+      {{ frm2.piloto }}
+      {% for error in frm2.piloto.errors %}
+    <div>
+      {{ error }}
+    </div>
+    {% endfor %}
+    </p>
+    <p>
+      {{ frm2.capacidad.label }}
+      {{ frm2.capacidad }}
+      {% for error in frm2.capacidad.errors %}
+    <div>
+      {{ error }}
+    </div>
+    {% endfor %}
+    </p>
+    <p>
+      {{ frm2.estado.label }}
+      {{ frm2.estado }}
+      {% for error in frm2.estado.errors %}
+    <div>
+      {{ error }}
+    </div>
+    {% endfor %}
+    </p>
+    <p>
+      {{ frm2.origen.label }}
+      {{ frm2.origen }}
+      {% for error in frm2.origen.errors %}
+    <div>
+      {{ error }}
+    </div>
+    {% endfor %}
+    </p>
+    <p>
+      {{ frm2.destino.label }}
+      {{ frm2.destino }}
+      {% for error in frm2.destino.errors %}
+    <div>
+      {{ error }}
+    </div>
+    {% endfor %}
+    </p>
+    <p>
+      {{ frm2.id_piloto_fk.label }}
+      {{ frm2.id_piloto_fk }}
+      {% for error in frm2.id_piloto_fk.errors %}
+    <div>
+      {{ error }}
+    </div>
+    {% endfor %}
+    </p>
+
+       {% for msg in get_flashed_messages() %}
+    <div>
+      {{ msg }}
+    </div>
+    {% endfor %}
+</div>
+<div class="btn">
+
+  {{ frm2.consultar }}
+  {{ frm2.reservar }}
+
+
+  </form>
+
+</div>
+{% endblock %}

@@ -1,0 +1,497 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: border-box;
+  min-height: 110%;
+  scroll-snap-type: mandatory;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+  min-height: 110%;
+}
+
+.macbook-1screen {
+  background-color: white;
+  height: 2620px;
+  position: relative;
+  width: 1360px;
+}
+
+.macbook-1screen .overlap-group7 {
+  cursor: pointer;
+  background-image: url("../static/img/tim-muangkeo-tqrss4bzbei-unsplash-1@1x.png");
+  background-position: 50% 50%;
+  background-size: cover;
+  height: 699px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 732px;
+}
+
+.macbook-1screen .logo {
+  height: 46px;
+  left: 16px;
+  position: absolute;
+  top: 8px;
+  width: 95px;
+}
+
+.macbook-1screen .text-1 {
+  color: white;
+  font-size: x-large;
+  font-weight: 700;
+  left: 414px;
+  letter-spacing: 0;
+  position: absolute;
+  top: 650px;
+}
+
+.macbook-1screen .group-4 {
+  height: 192px;
+  left: 351px;
+  position: absolute;
+  top: 154px;
+  width: 358px;
+}
+
+.macbook-1screen .overlap-group4 {
+  border-radius: 40px;
+  height: 70px;
+  left: 0;
+  position: absolute;
+  top: 122px;
+  width: 310px;
+}
+
+.macbook-1screen .ver-mas-vuelos-1 {
+  cursor: pointer;
+  color: turquoise;
+  font-size: 33px;
+  font-weight: 680;
+  left: 10px;
+  letter-spacing: 0;
+  position: absolute;
+  top: 26px;
+
+  /* boton */
+  width: 320px;
+  padding: 8px 10px;
+  text-align: left;
+  margin: 20px 10px;
+  border-radius: 35px;
+  border: 3px solid #fff;
+  background: transparent;
+  color: aqua;
+}
+
+.macbook-1screen .ver-mas-vuelos {
+  cursor: pointer;
+  color: turquoise;
+  font-size: 20px;
+  font-weight: 680;
+  left: 10px;
+  letter-spacing: 0;
+  position: absolute;
+  top: 12px;
+
+  /* boton */
+  width: 180px;
+  padding: 8px 0;
+  text-align: center;
+  margin: 20px 10px;
+  border-radius: 35px;
+  font-weight: bold;
+  border: 3px solid rgb(24, 179, 179);
+  background: transparent;
+  color: aqua;
+}
+
+.macbook-1screen .vector-1 {
+  height: 38px;
+  left: 290px;
+  position: absolute;
+  top: 60px;
+  width: 38px;
+}
+
+.macbook-1screen .x40-de-descuento {
+  color: transparent;
+  font-size: 40px;
+  left: 42px;
+  letter-spacing: 0;
+  position: absolute;
+  font-weight: 600;
+  top: 0;
+}
+
+.macbook-1screen .span0 {
+  color: turquoise;
+  font-size: 50px;
+}
+
+.macbook-1screen .span1 {
+  color: white;
+  font-size: xx-large;
+}
+
+.macbook-1screen .overlap-group9 {
+  height: 55px;
+  left: 1062px;
+  position: absolute;
+  top: 0;
+  width: 298px;
+}
+
+.macbook-1screen .rectangle-2 {
+  cursor: pointer;
+  height: 55px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 298px;
+}
+
+.macbook-1screen .iniciar-sesion {
+  cursor: pointer;
+  left: 59px;
+  letter-spacing: 0;
+  position: absolute;
+  top: 16px;
+  color: white;
+  font-size: 18px;
+  background: transparent;
+  border: transparent;
+}
+
+.macbook-1screen .ellipse-1 {
+  background-color: rgb(211, 209, 209);
+  border-radius: 15px;
+  height: 30px;
+  left: 210px;
+  position: absolute;
+  top: 12px;
+  width: 30px;
+}
+
+.macbook-1screen .overlap-group11 {
+  background-image: url("../img/intersect@2x.png");
+  cursor: pointer;
+  background-position: 50% 50%;
+  background-size: cover;
+  height: 290px;
+  left: 1159px;
+  position: absolute;
+  top: 228px;
+  width: 180px;
+}
+
+.macbook-1screen .place {
+  cursor: pointer;
+  left: 6px;
+  letter-spacing: 0;
+  position: absolute;
+  text-shadow: 0px 0px 10px #050505;
+  color: #fff;
+  top: 235px;
+}
+
+.macbook-1screen .overlap-group8 {
+  background-image: url("../img/intersect-1@2x.png");
+  cursor: pointer;
+  background-position: 50% 50%;
+  background-size: cover;
+  height: 290px;
+  left: 959px;
+  position: absolute;
+  top: 228px;
+  width: 180px;
+}
+
+.macbook-1screen .place-1 {
+  cursor: pointer;
+  left: 4px;
+  letter-spacing: 0;
+  position: absolute;
+  text-shadow: 0px 0px 10px #050505;
+  color: #fff;
+  top: 235px;
+}
+
+.macbook-1screen .overlap-group10 {
+  background-image: url("../img/intersect-2@2x.png");
+  cursor: pointer;
+  background-position: 50% 50%;
+  background-size: cover;
+  height: 290px;
+  left: 759px;
+  position: absolute;
+  top: 228px;
+  width: 180px;
+}
+
+.macbook-1screen .place-2 {
+  cursor: pointer;
+  left: 3px;
+  letter-spacing: 0;
+  position: absolute;
+  text-shadow: 0px 0px 10px #050505;
+  color: #fff;
+  top: 235px;
+}
+
+.place,
+.place-1,
+.place-2 {
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  left: 414px;
+  letter-spacing: 0;
+  position: absolute;
+  top: 650px;
+}
+.macbook-1screen .text-2 {
+  left: 759px;
+  letter-spacing: 0;
+  position: absolute;
+  top: 119px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: xx-large;
+  font-weight: 700;
+}
+
+.macbook-1screen .text-3 {
+  left: 759px;
+  letter-spacing: 0;
+  position: absolute;
+  top: 560px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: xx-large;
+  font-weight: 700;
+}
+
+.macbook-1screen .vuelos-nacionales {
+  left: 68px;
+  letter-spacing: 0;
+  position: absolute;
+  top: 738px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.macbook-1screen .text-4 {
+  left: 68px;
+  letter-spacing: 0;
+  position: absolute;
+  top: 1260px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.macbook-1screen .text-5 {
+  color: turquoise;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: larger;
+  font-weight: 700;
+  left: 759px;
+  letter-spacing: 0;
+  position: absolute;
+  top: 164px;
+}
+
+.macbook-1screen .frame-5 {
+  cursor: pointer;
+  height: 265px;
+  left: 62px;
+  position: absolute;
+  top: 837px;
+  width: 1235px;
+}
+
+.macbook-1screen .rectangle-6 {
+  cursor: pointer;
+  background-color: cadetblue;
+  border-radius: 20px;
+  height: 265px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 299px;
+}
+
+.macbook-1screen .overlap-group {
+  background-color: aliceblue;
+  border-radius: 20px;
+  height: 174px;
+  left: 10px;
+  position: absolute;
+  top: 9px;
+  width: 278px;
+}
+
+.macbook-1screen .rectangle-10 {
+  cursor: pointer;
+  background-color: cadetblue;
+  border-radius: 20px;
+  height: 28px;
+  left: 4px;
+  position: absolute;
+  top: 109px;
+  width: 142px;
+}
+
+.macbook-1screen .rectangle-11 {
+  cursor: pointer;
+  background-color: cadetblue;
+  border-radius: 20px;
+  height: 22px;
+  left: 4px;
+  position: absolute;
+  top: 144px;
+  width: 102px;
+}
+
+.macbook-1screen .rectangle-8 {
+  cursor: pointer;
+  background-color: aliceblue;
+  border-radius: 20px;
+  height: 28px;
+  left: 6px;
+  position: absolute;
+  top: 194px;
+  width: 287px;
+}
+
+.macbook-1screen .rectangle-9 {
+  cursor: pointer;
+  background-color: aliceblue;
+  border-radius: 20px;
+  height: 28px;
+  left: 6px;
+  position: absolute;
+  top: 229px;
+  width: 150px;
+}
+
+.macbook-1screen .vector {
+  height: 27px;
+  left: 253px;
+  position: absolute;
+  top: 230px;
+  width: 25px;
+}
+
+.macbook-1screen .rectangle-7 {
+  cursor: pointer;
+  background-color: cadetblue;
+  border-radius: 20px;
+  height: 265px;
+  left: 312px;
+  position: absolute;
+  top: 0;
+  width: 299px;
+}
+
+.macbook-1screen .rectangle-8-1 {
+  cursor: pointer;
+  background-color: cadetblue;
+  border-radius: 20px;
+  height: 265px;
+  left: 624px;
+  position: absolute;
+  top: 0;
+  width: 299px;
+}
+
+.macbook-1screen .rectangle-9-1 {
+  cursor: pointer;
+  background-color: cadetblue;
+  border-radius: 20px;
+  height: 265px;
+  left: 936px;
+  position: absolute;
+  top: 0;
+  width: 299px;
+}
+
+.macbook-1screen .frame-6 {
+  height: 265px;
+  left: 62px;
+  position: absolute;
+  top: 1359px;
+  width: 1235px;
+}
+
+.macbook-1screen .group-5 {
+  height: 55px;
+  left: 565px;
+  position: absolute;
+  top: 1161px;
+  width: 233px;
+}
+
+.macbook-1screen .overlap-group-1 {
+  border-radius: 40px;
+  height: 55px;
+  position: relative;
+  width: 231px;
+}
+
+.macbook-1screen .ver-mas-vuelos {
+  left: 20px;
+  letter-spacing: 0;
+  position: absolute;
+  top: 11px;
+}
+
+.macbook-1screen .group-6 {
+  height: 55px;
+  left: 565px;
+  position: absolute;
+  top: 1683px;
+  width: 233px;
+}
+
+.macbook-1screen .rectangle-12 {
+  background-color: #090b2d;
+  height: 480px;
+  left: 0;
+  position: absolute;
+  top: 2140px;
+  width: 1360px;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat:700,500,600,800");
+
+.screen a {
+  display: contents;
+  text-decoration: none;
+}
+
+.container-center-horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  pointer-events: none;
+  width: 100%;
+}
+
+.container-center-horizontal > * {
+  flex-shrink: 0;
+  pointer-events: auto;
+}

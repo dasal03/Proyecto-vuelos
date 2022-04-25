@@ -1,0 +1,338 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Registro de usuarios
+{% endblock %}
+
+{% block content %}
+<style>
+  * {
+    color: #fff;
+    background-color: #090b2d;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  #formulario {
+    margin-top: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80%;
+  }
+
+  #codigo {
+    width: 258px;
+    height: 31px;
+    left: 551px;
+    top: 50px;
+
+    background: rgba(191, 191, 191, 0.15);
+    border: 2px solid #9B9B9B;
+    box-sizing: border-box;
+    border-radius: 20px;
+  }
+
+  #avion {
+    width: 258px;
+    height: 31px;
+    left: 551px;
+    top: 120px;
+
+    background: rgba(191, 191, 191, 0.15);
+    border: 2px solid #9B9B9B;
+    box-sizing: border-box;
+    border-radius: 20px;
+  }
+
+  #piloto {
+    width: 258px;
+    height: 31px;
+    left: 551px;
+    top: 140px;
+
+    background: rgba(191, 191, 191, 0.15);
+    border: 2px solid #9B9B9B;
+    box-sizing: border-box;
+    border-radius: 20px;
+  }
+
+  #capacidad {
+    width: 258px;
+    height: 31px;
+    left: 551px;
+    top: 160px;
+
+    background: rgba(191, 191, 191, 0.15);
+    border: 2px solid #9B9B9B;
+    box-sizing: border-box;
+    border-radius: 20px;
+  }
+
+  #estado {
+    width: 258px;
+    height: 31px;
+    left: 551px;
+    top: 180px;
+
+    background: rgba(191, 191, 191, 0.15);
+    border: 2px solid #9B9B9B;
+    box-sizing: border-box;
+    border-radius: 20px;
+  }
+
+  #origen {
+    width: 258px;
+    height: 31px;
+    left: 551px;
+    top: 53px;
+
+    background: rgba(191, 191, 191, 0.15);
+    border: 2px solid #9B9B9B;
+    box-sizing: border-box;
+    border-radius: 20px;
+  }
+
+  #destino {
+    width: 258px;
+    height: 31px;
+    left: 551px;
+    top: 53px;
+
+    background: rgba(191, 191, 191, 0.15);
+    border: 2px solid #9B9B9B;
+    box-sizing: border-box;
+    border-radius: 20px;
+  }
+
+  #id_piloto_fk {
+    width: 258px;
+    height: 31px;
+    left: 551px;
+    top: 53px;
+
+    background: rgba(191, 191, 191, 0.15);
+    border: 2px solid #9B9B9B;
+    box-sizing: border-box;
+    border-radius: 20px;
+  }
+
+  #guardar {
+    top: 10px;
+    color: #fff;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 20px;
+    height: 28px;
+    position: relative;
+    width: 151px;
+  }
+
+  #consultar {
+    top: 10px;
+    color: #fff;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 20px;
+    height: 28px;
+    position: relative;
+    width: 151px;
+  }
+
+  #editar {
+    top: 10px;
+    color: #fff;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 20px;
+    height: 28px;
+    position: relative;
+    width: 151px;
+  }
+
+  #eliminar {
+    top: 10px;
+    color: #fff;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 20px;
+    height: 28px;
+    position: relative;
+    width: 151px;
+  }
+
+  .cerrar-sesion {
+    color: #fff;
+    text-align: center;
+    height: 28px;
+    position: absolute;
+    width: 151px;
+    top: 5px;
+    right: 120px;
+  }
+
+  .registrar {
+    color: #fff;
+    text-align: center;
+    border-radius: 20px;
+    border: 1px solid white;
+    height: 28px;
+    position: absolute;
+    width: 151px;
+    top: 140px;
+    left: 350px;
+  }
+
+  .view {
+    color: #fff;
+    text-align: center;
+    border-radius: 20px;
+    border: 1px solid white;
+    height: 28px;
+    position: absolute;
+    width: 151px;
+    top: 200px;
+    left: 350px;
+  }
+
+  .vuelos {
+    color: #fff;
+    text-align: center;
+    border-radius: 20px;
+    border: 1px solid white;
+    height: 28px;
+    position: absolute;
+    width: 151px;
+    top: 260px;
+    left: 350px;
+  }
+
+  .info {
+    left: 45px;
+    position: absolute;
+    top: 15px;
+  }
+</style>
+<img class="logo" src="../static/img/group-2@2x.svg">
+<div class="info">
+  Bienvenido, {% if session.usuario %} {{ session.usuario }} {% endif %}
+</div>
+<div>
+  <a class="cerrar-sesion" href="/logout">Logout</a>
+</div>
+
+<div>
+  <a class="registrar" href="/registrarse">Registrar</a>
+</div>
+
+<div>
+  <a class="view" href="/ver-registros">Ver Registros</a>
+</div>
+
+<div>
+  <a class="vuelos" href="/ver-vuelos">Ver Vuelos</a>
+</div>
+
+
+<form id="formulario" action="/vuelos/save" method="post" onsubmit="return confirmarBorrado()">
+  {{ frm.hidden_tag() }}
+  <p>
+    {{ frm.codigo.label }}
+    {{ frm.codigo }}
+    {% for error in frm.codigo.errors %}
+  <div>
+    {{ error }}
+  </div>
+  {% endfor %}
+  </p>
+  <p>
+    {{ frm.avion.label }}
+    {{ frm.avion }}
+    {% for error in frm.avion.errors %}
+  <div>
+    {{ error }}
+  </div>
+  {% endfor %}
+  </p>
+  <p>
+    {{ frm.piloto.label }}
+    {{ frm.piloto }}
+    {% for error in frm.piloto.errors %}
+  <div>
+    {{ error }}
+  </div>
+  {% endfor %}
+  </p>
+  <p>
+    {{ frm.capacidad.label }}
+    {{ frm.capacidad }}
+    {% for error in frm.capacidad.errors %}
+  <div>
+    {{ error }}
+  </div>
+  {% endfor %}
+  </p>
+  <p>
+    {{ frm.estado.label }}
+    {{ frm.estado }}
+    {% for error in frm.estado.errors %}
+  <div>
+    {{ error }}
+  </div>
+  {% endfor %}
+  </p>
+  <p>
+    {{ frm.origen.label }}
+    {{ frm.origen }}
+    {% for error in frm.origen.errors %}
+  <div>
+    {{ error }}
+  </div>
+  {% endfor %}
+  </p>
+  <p>
+    {{ frm.destino.label }}
+    {{ frm.destino }}
+    {% for error in frm.destino.errors %}
+  <div>
+    {{ error }}
+  </div>
+  {% endfor %}
+  </p>
+  <p>
+    {{ frm.id_piloto_fk.label }}
+    {{ frm.id_piloto_fk }}
+    {% for error in frm.id_piloto_fk.errors %}
+  <div>
+    {{ error }}
+  </div>
+  {% endfor %}
+  </p>
+
+  {% for msg in get_flashed_messages() %}
+  <div>
+    {{ msg }}
+  </div>
+  {% endfor %}
+  <div class="btn">
+    {{ frm.guardar }}
+    {{ frm.consultar }}
+    {{ frm.editar }}
+    {{ frm.eliminar }}
+
+</form>
+
+</div>
+{% endblock %}
